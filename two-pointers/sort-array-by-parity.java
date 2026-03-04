@@ -1,8 +1,9 @@
 // Problem: Sort Array By Parity
 // Platform: LeetCode
-// Pattern: Two Pointers / Partition
+// Pattern: fast-slow Two Pointers / Partition
 // Time Complexity: O(n)
 // Space Complexity: O(1)
+//link:https://leetcode.com/problems/sort-an-array/description/
 class Solution {
     public int[] sortArrayByParity(int[] nums) {
         int i=0;
