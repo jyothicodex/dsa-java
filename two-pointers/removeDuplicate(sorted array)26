@@ -3,6 +3,7 @@
 // Pattern: Two Pointers
 // Time Complexity: O(n)
 // Space Complexity: O(1)
+//link:https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 
 class Solution {
     public int removeDuplicates(int[] nums) {
