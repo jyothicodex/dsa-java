@@ -1,0 +1,21 @@
+// LeetCode 27 - Remove Element
+// Pattern: Two Pointers(fast-slow)
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+//link:https://leetcode.com/problems/remove-element/description/
+code:
+
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int k = 0;
+
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != val) {
+                nums[k] = nums[j];
+                k++;
+            }
+        }
+
+        return k;
+    }
+}
