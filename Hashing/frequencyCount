@@ -1,0 +1,184 @@
+Problem Statement
+
+Given an integer array, count the frequency of each element and print:
+
+element -> frequency
+Example
+
+Input:
+
+[101, 203, 101, 405, 203, 101]
+
+Output:
+
+101 --> 3
+203 --> 2
+405 --> 1
+Intuition / Trigger
+
+Whenever a problem asks:
+
+frequency count
+occurrences
+repeated elements
+counting elements
+
+your brain should instantly think:
+
+HashMap
+
+because HashMap provides:
+
+key -> value mapping
+
+For this problem:
+
+element -> frequency
+
+Example:
+
+101 -> 3
+
+means:
+
+key = element
+value = frequency count
+Approach
+Step 1
+
+Traverse the array element by element.
+
+Step 2
+
+For every element:
+
+If already present in HashMap
+
+Increase its frequency by 1.
+
+old frequency + 1
+Else
+
+Insert the element with frequency 1.
+
+element -> 1
+Step 3
+
+Traverse the HashMap and print:
+
+key -> value
+Code
+import java.util.HashMap;
+
+class freqCountProblem {
+
+    public static void main(String args[]) {
+
+        HashMap<Integer,Integer> hm = new HashMap<>();
+
+        int[] arr = {101,203,101,405,203,101};
+
+        for(int i=0; i<arr.length; i++) {
+
+            if(hm.containsKey(arr[i])) {
+
+                hm.put(arr[i], hm.get(arr[i]) + 1);
+
+            } else {
+
+                hm.put(arr[i], 1);
+            }
+        }
+
+        for(int key : hm.keySet()) {
+
+            System.out.println(key + " --> " + hm.get(key));
+        }
+    }
+}
+Dry Run
+
+Array:
+
+[101,203,101]
+First Element = 101
+
+Not present in HashMap.
+
+Store:
+
+101 -> 1
+Second Element = 203
+
+Not present.
+
+Store:
+
+203 -> 1
+
+HashMap:
+
+101 -> 1
+203 -> 1
+Third Element = 101
+
+Already exists.
+
+Old frequency:
+
+1
+
+Increase by 1:
+
+2
+
+Update:
+
+101 -> 2
+
+Final HashMap:
+
+101 -> 2
+203 -> 1
+Time Complexity
+Traversing array
+O(n)
+HashMap operations
+containsKey(), get(), put()
+
+take approximately:
+
+O(1)
+
+Overall:
+
+O(n)
+Space Complexity
+
+HashMap stores frequencies of elements.
+
+In worst case all elements are unique.
+
+O(n)
+Key Learning
+HashMap Methods Used
+put()
+Store / Update data
+get()
+Retrieve stored value
+containsKey()
+Check whether key already exists
+keySet()
+Get all keys for traversal
+Pattern Recognition
+
+Problems involving:
+
+frequency counting
+duplicates
+repeated elements
+occurrence tracking
+
+often use:
+
+HashMap
